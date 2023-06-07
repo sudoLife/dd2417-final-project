@@ -444,6 +444,9 @@ def main():
         data_args.num_beams if data_args.num_beams is not None else training_args.generation_num_beams
     )
 
+    # only save 3 checkpoints
+    training_args.save_total_limit = 3
+
     # Initialize our Trainer
     trainer = Seq2SeqTrainer(
         model=model,
