@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export HUGGINGFACE_TOKEN="your_token"
+
 python run_summarization.py \
 --model_name_or_path t5-small \
 --do_train \
@@ -14,3 +16,4 @@ python run_summarization.py \
 --predict_with_generate \
 --max_source_length 1024 \
 --max_target_length 128 \
+--push_to_hub
